@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     private float _movementX;
     private float _movementY;
+
+    [SerializeField]
+    private float _speed;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -19,6 +22,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(_movementX, 0.0f, _movementY);
-        _rb.AddForce(movement);
+        _rb.AddForce(movement * _speed);
     }
 }
