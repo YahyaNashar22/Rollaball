@@ -3,14 +3,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Rigidbody _rb;
+    private float _movementX;
+    private float _movementY;
     void Start()
     {
-
+        _rb = GetComponent<Rigidbody>();
     }
-
-    void onMove(InputValue movementValue)
+    void OnMove(InputValue movementValue)
     {
-
+        Vector2 movementVector = movementValue.Get<Vector2>();
+        _movementX = movementVector.x;
+        _movementY = movementVector.y;
+    }
+    void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(_movementX, 0.0f, _movementY);
+        _rb.AddForce(movement);
     }
 }
