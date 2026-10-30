@@ -24,4 +24,12 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(_movementX, 0.0f, _movementY);
         _rb.AddForce(movement * _speed);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }

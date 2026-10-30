@@ -1956,8 +1956,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 1436264332841163970, guid: 396d56d9b074be34998ff70775b33dfd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3255137264716092812, guid: 396d56d9b074be34998ff70775b33dfd, type: 3}
       propertyPath: m_Name
+      value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255137264716092812, guid: 396d56d9b074be34998ff70775b33dfd, type: 3}
+      propertyPath: m_TagString
       value: Pickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
