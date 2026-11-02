@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,11 +8,16 @@ public class PlayerController : MonoBehaviour
     private float _movementX;
     private float _movementY;
 
+    private int _count;
+
     [SerializeField]
     private float _speed;
+
+    public TextMeshProUGUI countText;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        SetCountText();
     }
     void OnMove(InputValue movementValue)
     {
@@ -30,6 +36,13 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             other.gameObject.SetActive(false);
+            _count++;
+            SetCountText();
         }
+    }
+
+    private void SetCountText()
+    {
+        countText.text = "Count: " + _count.ToString();
     }
 }
